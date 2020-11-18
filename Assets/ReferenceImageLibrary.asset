@@ -1,0 +1,47 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 848409ee8ba454f42a5ddff137688a27, type: 3}
+  m_Name: ReferenceImageLibrary
+  m_EditorClassIdentifier: 
+  m_GuidLow: 4999954834580910401
+  m_GuidHigh: 1879906304233454744
+  m_Images:
+  - m_SerializedGuid:
+      m_GuidLow: 5018107938332109314
+      m_GuidHigh: 6670602912422205087
+    m_SerializedTextureGuid:
+      m_GuidLow: 1471799242050242623
+      m_GuidHigh: 16682639103021013273
+    m_Size: {x: 0.3, y: 0.3}
+    m_SpecifySize: 1
+    m_Name: QRCodeRecycling
+    m_Texture: {fileID: 2800000, guid: db18083fe19c146c19d99b33e0a384e7, type: 3}
+  - m_SerializedGuid:
+      m_GuidLow: 5326727498038568501
+      m_GuidHigh: 6852532327302587036
+    m_SerializedTextureGuid:
+      m_GuidLow: 1471799242050242623
+      m_GuidHigh: 16682639103021013273
+    m_Size: {x: 0, y: 0}
+    m_SpecifySize: 0
+    m_Name: QRCodeGeneral
+    m_Texture: {fileID: 0}
+  - m_SerializedGuid:
+      m_GuidLow: 4699982278617905549
+      m_GuidHigh: 15360745489406147229
+    m_SerializedTextureGuid:
+      m_GuidLow: 0
+      m_GuidHigh: 0
+    m_Size: {x: 0, y: 0}
+    m_SpecifySize: 0
+    m_Name: QRCodeCompost
+    m_Texture: {fileID: 0}
