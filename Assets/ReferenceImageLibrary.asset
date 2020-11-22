@@ -16,32 +16,32 @@ MonoBehaviour:
   m_GuidHigh: 1879906304233454744
   m_Images:
   - m_SerializedGuid:
-      m_GuidLow: 5018107938332109314
-      m_GuidHigh: 6670602912422205087
-    m_SerializedTextureGuid:
-      m_GuidLow: 1471799242050242623
-      m_GuidHigh: 16682639103021013273
-    m_Size: {x: 0.3, y: 0.3}
-    m_SpecifySize: 1
-    m_Name: QRCodeRecycling
-    m_Texture: {fileID: 2800000, guid: db18083fe19c146c19d99b33e0a384e7, type: 3}
-  - m_SerializedGuid:
       m_GuidLow: 5326727498038568501
       m_GuidHigh: 6852532327302587036
     m_SerializedTextureGuid:
-      m_GuidLow: 1471799242050242623
-      m_GuidHigh: 16682639103021013273
-    m_Size: {x: 0, y: 0}
-    m_SpecifySize: 0
-    m_Name: QRCodeGeneral
+      m_GuidLow: 9514253851410255181
+      m_GuidHigh: 3262726028484841705
+    m_Size: {x: 0.3, y: 0.30063966}
+    m_SpecifySize: 1
+    m_Name: Recycling
     m_Texture: {fileID: 0}
   - m_SerializedGuid:
       m_GuidLow: 4699982278617905549
       m_GuidHigh: 15360745489406147229
     m_SerializedTextureGuid:
-      m_GuidLow: 0
-      m_GuidHigh: 0
-    m_Size: {x: 0, y: 0}
-    m_SpecifySize: 0
-    m_Name: QRCodeCompost
+      m_GuidLow: 13010183785932607085
+      m_GuidHigh: 16509370665282872200
+    m_Size: {x: 0.3, y: 0.2986667}
+    m_SpecifySize: 1
+    m_Name: Compost
+    m_Texture: {fileID: 0}
+  - m_SerializedGuid:
+      m_GuidLow: 4785917036112839146
+      m_GuidHigh: 16970246913386421142
+    m_SerializedTextureGuid:
+      m_GuidLow: 1471799242050242623
+      m_GuidHigh: 16682639103021013273
+    m_Size: {x: 0.3, y: 0.3}
+    m_SpecifySize: 1
+    m_Name: General
     m_Texture: {fileID: 0}
