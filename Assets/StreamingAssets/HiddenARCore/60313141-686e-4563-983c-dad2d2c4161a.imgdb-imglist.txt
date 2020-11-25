@@ -1,3 +1,0 @@
-efe4e635566f49ec9c62c06cd815195f|Assets/Images/Recycling.png|0.3
-17a6b98db0fb41399dba3c4da3542cd5|Assets/Images/Compost.png|0.3
-fdff01eafe2f426a961b11cfa76d82eb|Assets/Images/General.png|0.3
