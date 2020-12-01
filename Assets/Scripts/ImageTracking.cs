@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.XR;
 using UnityEngine.XR.ARFoundation;
+using UnityEngine.UI;
+
 
 
 [RequireComponent(typeof(ARTrackedImageManager))]
@@ -13,6 +15,8 @@ public class ImageTracking : MonoBehaviour
 
     private Dictionary<string, GameObject> spawnedPrefabs = new Dictionary<string, GameObject>();
     private ARTrackedImageManager trackedImageManager;
+
+    public Text scoreLabel;
 
     private void Awake()
     {
@@ -65,5 +69,19 @@ private void OnEnable()
                 go.SetActive(false);
             }
         }
+        if (name == "Recycling")
+        {
+            scoreLabel.text = "Item can be recycled. Tap Recycle Icon for more details.";
+        }
+        else if (name == "General")
+        {
+            scoreLabel.text = "Item cannot be recycled. Tap General Waste Icon for more details.";
+        }
+        else if (name == "Compost")
+        {
+            scoreLabel.text = "Item is compostable. Tap Compostable Icon for more details.";
+        }
+
+
     }
 }
