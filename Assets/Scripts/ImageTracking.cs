@@ -18,11 +18,15 @@ public class ImageTracking : MonoBehaviour
 
     public Text scoreLabel;
 
+    public RawImage scanImageIcon;
+
+    private Vector3 scaleFactor = new Vector3(0.2f, 0.2f, 0.2f);
+
     private void Awake()
     {
         trackedImageManager = FindObjectOfType<ARTrackedImageManager>();
 
-        foreach(GameObject prefab in placeablePrefabs)
+        foreach (GameObject prefab in placeablePrefabs)
         {
             //zero so that it starts hidden, defaukt rortaion
             GameObject newPrefab = Instantiate(prefab, Vector3.zero, Quaternion.identity);
@@ -32,20 +36,20 @@ public class ImageTracking : MonoBehaviour
         }
     }
 
-private void OnEnable()
+    private void OnEnable()
     {
         trackedImageManager.trackedImagesChanged += ImageChanged;
     }
-   private void OnDisable()
+    private void OnDisable()
     {
         trackedImageManager.trackedImagesChanged -= ImageChanged;
     }
 
     private void ImageChanged(ARTrackedImagesChangedEventArgs eventArgs)
     {
-        foreach(ARTrackedImage trackedImage in eventArgs.added)
+        foreach (ARTrackedImage trackedImage in eventArgs.added)
         {
-            UpdateImage(trackedImage);
+            UpdateARImage(trackedImage);
         }
 
         foreach (ARTrackedImage trackedImage in eventArgs.removed)
@@ -54,21 +58,44 @@ private void OnEnable()
         }
     }
 
-    private void UpdateImage(ARTrackedImage trackedImage)
+    //private void UpdateARImage(ARTrackedImage trackedImage)
+    //{
+    //    scanImageIcon.enabled = false;
+    //    string name = trackedImage.referenceImage.name;
+    //    Vector3 position = trackedImage.transform.position;
+
+    //    GameObject prefab = spawnedPrefabs[name];
+    //    prefab.SetActive(true);
+
+    //    foreach(GameObject go in spawnedPrefabs.Values)
+    //    {
+    //        if(go.name != name)
+    //        {
+    //            go.SetActive(false);
+    //        }
+    //    }
+    //    if (name == "Recycling")
+    //    {
+    //        scoreLabel.text = "Item can be recycled. Tap Recycle Icon for more details.";
+    //    }
+    //    else if (name == "General")
+    //    {
+    //        scoreLabel.text = "Item cannot be recycled. Tap General Waste Icon for more details.";
+    //    }
+    //    else if (name == "Compost")
+    //    {
+    //        scoreLabel.text = "Item is compostable. Tap Compostable Icon for more details.";
+    //    }
+
+
+    //}
+
+    private void UpdateARImage(ARTrackedImage trackedImage)
     {
+        scanImageIcon.enabled = false;
         string name = trackedImage.referenceImage.name;
         Vector3 position = trackedImage.transform.position;
 
-        GameObject prefab = spawnedPrefabs[name];
-        prefab.SetActive(true);
-
-        foreach(GameObject go in spawnedPrefabs.Values)
-        {
-            if(go.name != name)
-            {
-                go.SetActive(false);
-            }
-        }
         if (name == "Recycling")
         {
             scoreLabel.text = "Item can be recycled. Tap Recycle Icon for more details.";
@@ -81,6 +108,30 @@ private void OnEnable()
         {
             scoreLabel.text = "Item is compostable. Tap Compostable Icon for more details.";
         }
+
+        AssignGameObject(name, position);
+
+
+    }
+
+    void AssignGameObject(string name, Vector3 newPosition)
+    {
+        if (placeablePrefabs != null)
+        {
+            spawnedPrefabs[name].SetActive(true);
+            spawnedPrefabs[name].transform.position = newPosition;
+            spawnedPrefabs[name].transform.localScale = scaleFactor;
+            foreach (GameObject go in spawnedPrefabs.Values)
+            {
+                if (go.name != name)
+                {
+                    go.SetActive(false);
+                }
+            }
+
+        }
+
+
 
 
     }

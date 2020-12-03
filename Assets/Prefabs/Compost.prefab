@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 1489408208749459253}
   - component: {fileID: 5625635282231888155}
   m_Layer: 0
-  m_Name: TrashbinRed
+  m_Name: Compost
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
