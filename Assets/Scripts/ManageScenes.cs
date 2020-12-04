@@ -21,6 +21,26 @@ public class ManageScenes : MonoBehaviour
        SceneManager.LoadScene("Options");
     }
 
+    public void MyAccountScene ()
+    {
+       SceneManager.LoadScene("MyAccount");
+    }
+
+    public void TipsAndTricksScene ()
+    {
+       SceneManager.LoadScene("TipsAndTricks");
+    }
+
+    public void WhereToRecycleScene ()
+    {
+       SceneManager.LoadScene("WhereToRecycle");
+    }
+
+    public void SearchForItemScene ()
+    {
+       SceneManager.LoadScene("SearchForItem");
+    }
+
     public void QuitApp()
     {
         Debug.Log("QUIT!");
