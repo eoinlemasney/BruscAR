@@ -15,6 +15,16 @@ public class RecycleInfo : MonoBehaviour
     		BatteryInfoActive = true;
     	}
     }
+
+    public void setBatteryCard()
+    {
+        if (BatteryInfoActive)
+        {
+            BatteryInfo.SetActive(false);
+            BatteryInfoActive = false;
+        }
+    }
+
     public void setAerosolInfo()
     {
     	if (!AerosolInfoActive)
@@ -23,6 +33,16 @@ public class RecycleInfo : MonoBehaviour
     		AerosolInfoActive = true;
     	}
     }
+
+    public void setAerosolCard()
+    {
+        if (AerosolInfoActive)
+        {
+            AerosolInfo.SetActive(false);
+            AerosolInfoActive = false;
+        }
+    }
+
     public void setKitchenInfo()
     {
     	if (!KitchenInfoActive)
@@ -31,6 +51,16 @@ public class RecycleInfo : MonoBehaviour
     		KitchenInfoActive = true;
     	}
     }
+
+    public void setKitchenCard()
+    {
+        if (KitchenInfoActive)
+        {
+            KitchenInfo.SetActive(false);
+            KitchenInfoActive = false;
+        }
+    }
+
     public void setPizzaInfo()
     {
     	if (!PizzaInfoActive)
@@ -38,5 +68,14 @@ public class RecycleInfo : MonoBehaviour
     		PizzaInfo.SetActive(true);
     		PizzaInfoActive = true;
     	}
+    }
+
+    public void setPizzaCard()
+    {
+        if (PizzaInfoActive)
+        {
+            PizzaInfo.SetActive(false);
+            PizzaInfoActive = false;
+        }
     }
 }
