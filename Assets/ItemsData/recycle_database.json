@@ -1,0 +1,26 @@
+[
+    {
+        "name": "coke can",
+        "image_name": "CokeCan",
+        "recyclable": "Yes",
+        "instructions": "Only if it has been emptied and rinsed",
+
+    },
+    {
+        "name": "magazine",
+        "image_name": "Magazines",
+        "recyclable": "Yes",
+        "instructions": "No extra steps needed",
+    },
+    {
+        "name": "clothes",
+        "image_name": "Clothes",
+        "recyclable": "No",
+        "instructions": "Consider dropping off at a donation bank",
+    }
+]
+
+
+
+
+
