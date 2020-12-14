@@ -4,9 +4,11 @@ using System.IO;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.Networking;
+using System.Runtime.Serialization;
 
 using Newtonsoft.Json;
 
+[System.Serializable]
 public class RecycleObject
 {
     public string name;
@@ -15,12 +17,16 @@ public class RecycleObject
     public string instructions; 
 }
 
+[System.Serializable]
+public class RootObject
+{
+    public RecycleObject[] recycleItems;
+}
 
 public class SearchInput : MonoBehaviour
 {
     public InputField SearchBar;
-    List<RecycleObject> recycle_data;
-    
+    public RootObject recycle_data = new RootObject();
 
     private Sprite imageToLoad;
     public GameObject itemIndicator;
@@ -37,12 +43,9 @@ public class SearchInput : MonoBehaviour
     void loadRecycleData()
     {
         Debug.Log("Reading Data");
-        string path = Application.dataPath + "/ItemsData/recycle_database.json";
-        using (StreamReader r = new StreamReader(path))
-        {
-            string json = r.ReadToEnd();
-            recycle_data = JsonConvert.DeserializeObject<List<RecycleObject>>(json);
-        }
+        Debug.Log("Loading Database as Resource");
+        var jsonFile = Resources.Load<TextAsset>("recycle_database");
+        recycle_data = JsonUtility.FromJson<RootObject>("{\"recycleItems\":" + jsonFile + "}");
         Debug.Log("Data Loaded");
     }
 
@@ -54,7 +57,7 @@ public class SearchInput : MonoBehaviour
     // Print data
     public void printData()
     {
-        foreach(RecycleObject item in recycle_data){
+        foreach(RecycleObject item in recycle_data.recycleItems){
             string data = "Name: " + item.name + ". Is it recyclable: " + item.recyclable;
             print(data);
         }
@@ -65,7 +68,7 @@ public class SearchInput : MonoBehaviour
         if (SearchBar.text != "")
         {
             string SearchKey = SearchBar.text.ToLower();
-            foreach(RecycleObject item in recycle_data)
+            foreach(RecycleObject item in recycle_data.recycleItems)
             {
                if (item.name == SearchKey)
                {
@@ -101,8 +104,6 @@ public class SearchInput : MonoBehaviour
         ItemFoundLabel.text = "Item Found";
         IsRecyclableLabel.text = "Can it be Recycled: " + item.recyclable;
         InstructionsLabel.text = "Extra Instructions: " + item.instructions;
-
-
     }
 
     public void itemNotFound()
@@ -116,6 +117,7 @@ public class SearchInput : MonoBehaviour
 
     void Start()
     {
+        Debug.Log("Loading Recycle Data");
         loadRecycleData();
     }
 }
