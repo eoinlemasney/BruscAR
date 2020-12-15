@@ -21,7 +21,7 @@ public class UserDetails : MonoBehaviour
 
     void Start()
     {
-    	loadUserData();
-    	userItemsScannedLabel.text = "Items Scanned: " + itemsScanned;
+    	//loadUserData();
+    	//userItemsScannedLabel.text = "Items Scanned: " + itemsScanned;
     }
 }
