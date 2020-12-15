@@ -6,9 +6,15 @@ using UnityEngine.UI;
 
 public class UserDetails : MonoBehaviour
 {
-	public Text userItemsScannedLabel;
+    public Text userItemsScannedLabel;
+    public Text recycleItemsItemsScannedLabel;
+    public Text generalItemsScannedLabel;
+    public Text compostItemsScannedLabel;
 
-	int itemsScanned;
+    int itemsScanned;
+    int recycleItemsScannedCount;
+    int generalItemsScannedCount;
+    int compostItemsScannedCount;
     static int itemsScannedCount;
 
     void loadUserData()
@@ -22,9 +28,17 @@ public class UserDetails : MonoBehaviour
 
     void Start()
     {
-        //loadUserData();
-        //userItemsScannedLabel.text = "Items Scanned: " + itemsScanned;
+        // On start, load in past session saved conent
+        // This content records the number of items that have been scanned.
+
         itemsScannedCount = PlayerPrefs.GetInt("scanned_count");
-        userItemsScannedLabel.text = "Items Scanned: " + itemsScannedCount;
+        recycleItemsScannedCount = PlayerPrefs.GetInt("recycle_scanned_count");
+        generalItemsScannedCount = PlayerPrefs.GetInt("general_scanned_count");
+        compostItemsScannedCount = PlayerPrefs.GetInt("compost_scanned_count");
+
+        userItemsScannedLabel.text = "Total Items Scanned: " + itemsScannedCount;
+        recycleItemsItemsScannedLabel.text = "Recyclable Items Scanned: " + recycleItemsScannedCount;
+        generalItemsScannedLabel.text = "General Items Scanned: " + generalItemsScannedCount;
+        compostItemsScannedLabel.text = "Compostable Items Scanned: " + compostItemsScannedCount;
     }
 }
