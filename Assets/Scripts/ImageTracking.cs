@@ -114,7 +114,7 @@ public class ImageTracking : MonoBehaviour
 
         string raw_image_name = trackedImage.referenceImage.name;
         scanImageIcon.enabled = false;
-        Vector3 position = trackedImage.transform.position + trackedImage.transform.up * 0.05f + trackedImage.transform.forward * -0.1f;
+        Vector3 position = trackedImage.transform.position + trackedImage.transform.up * 0.05f + trackedImage.transform.forward * 0.1f;
         fixedPosition = position;
 
 
