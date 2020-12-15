@@ -9,6 +9,7 @@ public class UserDetails : MonoBehaviour
 	public Text userItemsScannedLabel;
 
 	int itemsScanned;
+    static int itemsScannedCount;
 
     void loadUserData()
     {
@@ -21,7 +22,9 @@ public class UserDetails : MonoBehaviour
 
     void Start()
     {
-    	//loadUserData();
-    	//userItemsScannedLabel.text = "Items Scanned: " + itemsScanned;
+        //loadUserData();
+        //userItemsScannedLabel.text = "Items Scanned: " + itemsScanned;
+        itemsScannedCount = PlayerPrefs.GetInt("scanned_count");
+        userItemsScannedLabel.text = "Items Scanned: " + itemsScannedCount;
     }
 }

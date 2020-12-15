@@ -43,6 +43,7 @@ public class ImageTracking : MonoBehaviour
     public GameObject ParticleSystem;
 
     public bool isTapped = false;
+    static int scannedCount;
 
     public string currentImage;
 
@@ -95,16 +96,20 @@ public class ImageTracking : MonoBehaviour
     {
         string raw_image_name = trackedImage.referenceImage.name;
         scanImageIcon.enabled = false;
-        Vector3 position = trackedImage.transform.position + trackedImage.transform.up * 0.2f + trackedImage.transform.forward * 0.2f;
+        Vector3 position = trackedImage.transform.position + trackedImage.transform.up * 0.05f + trackedImage.transform.forward * 0.2f;
         fixedPosition = position;
 
 
         ReturnItemName(raw_image_name);
         string name = DetectImageGroup(raw_image_name);
         AssignGameObject(name, position);
+        scannedCount += 1;
+        PlayerPrefs.SetInt("scanned_count", scannedCount);
+        PlayerPrefs.Save();
 
 
-        
+
+
 
 
     }
