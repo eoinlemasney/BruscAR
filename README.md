@@ -126,19 +126,6 @@ Assets/
 └── Resources/             # Additional assets loaded at runtime
 ```
 
-## Contributing
-
-This appears to be an educational project. If you'd like to contribute:
-1. Fork the repository
-2. Create a feature branch
-3. Make your changes
-4. Test thoroughly on target devices
-5. Submit a pull request
-
-## License
-
-Please check the project's license file for usage rights and restrictions.
-
 ## Notes
 
 - The app requires specific reference images to function properly
@@ -146,10 +133,4 @@ Please check the project's license file for usage rights and restrictions.
 - User data is stored locally on the device
 - The app is designed for educational purposes around recycling awareness
 
-## Troubleshooting
 
-### Common Issues
-- **AR objects not appearing**: Ensure reference images are properly configured in AR Reference Image Library
-- **Search not working**: Check that `recycle_database.json` is in the correct Resources folder
-- **Audio not playing**: Verify AudioSource components are properly assigned in the scene
-- **Build issues**: Ensure all required packages are installed and platform settings are correct
